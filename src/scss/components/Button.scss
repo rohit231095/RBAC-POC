@@ -1,0 +1,25 @@
+@import "../mixins";
+@import "../colors";
+
+.button {
+    @include d-flex-center;
+    width: 240px;
+    border: {
+        width: 2px;
+        style: solid;
+        color: $BLACK;
+    }
+    margin: 24px;
+    padding: 8px 0;
+    cursor: pointer;
+
+    &:hover {
+        color: $RED;
+        border: {
+            color: $RED;
+        }
+        background: {
+            color: $BLACK;
+        }
+    }
+}

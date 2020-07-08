@@ -1,0 +1,87 @@
+@import "../colors";
+
+.label-input {
+    display: flex;
+    width: 240px;
+    text: {
+        align: left;
+    }
+    margin: 24px;
+    position: relative;
+    border: {
+        bottom: {
+            width: 1px;
+            style: solid;
+            color: $BLACK;
+        }
+    }
+    padding: 2px 0;
+    transition: {
+        property: all;
+        duration: 0.5s;
+    }
+
+    & > div {
+        position: absolute;
+        left: 1px;
+        top: 0px;
+        font: {
+            size: 16px;
+        }
+        transition: {
+            property: all;
+            duration: 0.5s;
+        }
+        z: {
+            index: 0;
+        }
+    }
+
+    & > input {
+        outline: none;
+        border: none;
+        width: 100%;
+        z: {
+            index: 1;
+        }
+        opacity: 0;
+        background: {
+            color: transparent;
+        }
+
+        &:focus {
+            opacity: 1;
+
+            & + div {
+                font: {
+                    size: 12px;
+                }
+                top: -16px;
+                left: 0px;
+                color: $RED;
+            }
+        }
+    }
+
+    &:focus-within,
+    &.has-value {
+        border: {
+            color: $RED;
+        }
+    }
+
+    &.has-value {
+        & > div {
+            font: {
+                size: 12px;
+            }
+            top: -16px;
+            left: 0px;
+            color: $RED;
+        }
+
+        & > input {
+            opacity: 1;
+        }
+    }
+}

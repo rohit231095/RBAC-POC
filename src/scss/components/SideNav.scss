@@ -1,0 +1,90 @@
+@import "../colors";
+
+.side-nav {
+    width: 240px;
+    height: 100vh;
+    background: {
+        color: $BLACK;
+    }
+    color: $WHITE;
+
+    & > div {
+        border: {
+            bottom: {
+                width: 2px;
+                style: solid;
+                color: $WHITE;
+            }
+        }
+
+        &:nth-child(1) {
+            font: {
+                size: 24px;
+                weight: 700;
+            }
+            line-height: 48px;
+            padding: 20px;
+            text-transform: capitalize;
+        }
+
+        &:not(:first-child) {
+            font: {
+                size: 18px;
+                weight: 700;
+            }
+            line-height: 24px;
+            padding: 10px;
+            letter-spacing: 4px;
+            word-spacing: 8px;
+            cursor: pointer;
+
+            &:hover,
+            &.active {
+                background-color: $APP-COLOR-01;
+                color: $RED;
+                & > a {
+                    color: $RED;
+                }
+            }
+
+            & > a {
+                text-decoration: none;
+            }
+
+            &.active {
+                border: {
+                    left: {
+                        width: 4px;
+                        style: solid;
+                        color: $RED;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            position: absolute;
+            width: 240px;
+            bottom: 0;
+            border: {
+                bottom: {
+                    width: 0;
+                }
+                top: {
+                    width: 2px;
+                    style: solid;
+                    color: $WHITE;
+                }
+            }
+            box-sizing: border-box;
+
+            &:hover {
+                border: {
+                    width: 2px;
+                    style: solid;
+                    color: $RED;
+                }
+            }
+        }
+    }
+}

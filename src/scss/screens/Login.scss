@@ -1,0 +1,9 @@
+@import "../mixins";
+@import "../colors";
+
+.login {
+    @include d-flex-center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}

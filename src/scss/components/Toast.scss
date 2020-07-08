@@ -1,0 +1,57 @@
+@import "../colors";
+@import "../mixins";
+
+@mixin show-toast {
+    max-width: 240px;
+}
+
+@mixin hide-toast {
+    max-width: 0;
+}
+
+@mixin toast-type($bg-color) {
+    background: {
+        color: $bg-color;
+    }
+}
+
+.toast {
+    position: absolute;
+    z: {
+        index: 1000;
+    }
+    top: 10px;
+    right: 10px;
+    @include d-flex-center;
+    width: 240px;
+    padding: 10px;
+    transition: {
+        property: all;
+        duration: 0.5s;
+    }
+    color: $WHITE;
+    font: {
+        weight: 500;
+        size: 18px;
+    }
+
+    &.show {
+        @include show-toast;
+    }
+
+    &.hide {
+        @include hide-toast;
+    }
+
+    &.error {
+        @include toast-type($RED);
+    }
+
+    &.warn {
+        @include toast-type($YELLOW);
+    }
+
+    &.success {
+        @include toast-type($GREEN);
+    }
+}

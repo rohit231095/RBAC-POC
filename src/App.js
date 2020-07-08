@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './scss/App.scss';
+import { Server } from 'miragejs';
+import Routes from './routes';
+
+let server = {};
+if (process.env.REACT_APP_API_ENV === "mock") {
+  import("./mock-backend/Server")
+    .then(res => server = res)
+}
 
 function App() {
+  if (process.env.REACT_APP_API_ENV === "mock") {
+    new Server(server);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes />
     </div>
   );
 }
