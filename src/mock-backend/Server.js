@@ -33,8 +33,4 @@ let server = new Server({
     }
 });
 
-// if (process.env.REACT_APP_API_ENV !== "mock") {
-//     server = {};
-// }
-
 export default server;
