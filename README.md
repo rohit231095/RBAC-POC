@@ -26,12 +26,12 @@ You will also see any lint errors in the console.
 
 The source code directory brief:
 
-## `index.js` - Main index file
-## `App.js` - Main App Component
-## `src/components` - Contains all the custom components
-## `src/screens` - All the screens displaying each app page
-## `src/scss` - Containing all the `CSS` written with `SASS`, structuring same as `src` folder
-## `src/mock-backend` - Backend APIs mock server using `Miragejs`
-## `src/routes` - Containing app routes imported in App.js
-## `src/config` - Main config related to API url
-## `src/services` - API call function services
+#### `index.js` - Main index file
+#### `App.js` - Main App Component
+#### `src/components` - Contains all the custom components
+#### `src/screens` - All the screens displaying each app page
+#### `src/scss` - Containing all the `CSS` written with `SASS`, structuring same as `src` folder
+#### `src/mock-backend` - Backend APIs mock server using `Miragejs`
+#### `src/routes` - Containing app routes imported in App.js
+#### `src/config` - Main config related to API url
+#### `src/services` - API call function services
